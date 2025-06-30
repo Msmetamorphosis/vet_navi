@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dark-brown: #4B2A12;
+  --medium-brown: #70421C;
+  --warm-brown: #8B5A2B;
+  --coyote-tan: #A37E4C;
+  --desert-khaki: #B4A581;
+  --sandstone-beige: #C2BA9A;
+  --pale-olive: #C6C7A2;
+  --sage-green: #9FA77A;
+  --olive-drab: #6C7450;
+  --military-green: #4A513A;
+  --deep-army-green: #333C2C;
+  --charcoal: #1f2937;
+  --accent-tan: #A38C6d;
+  --accent-olive: #4a4a20;
+  
+  /* Original colors for preserved sections */
+  --olive-green: #6d6c3c;
+  --muted-gold: #bca55a;
+  --navy: #222833;
+  --deep-slate: #22262a;
+  --cream: #f6f6f3;
+  --accent-black: #1a1b1f;
+}
+
+@layer base {
+  :root {
+    --background: 194 186 154;
+    --foreground: 51 60 44;
+    --card: 254 252 247;
+    --card-foreground: 51 60 44;
+    --popover: 254 252 247;
+    --popover-foreground: 51 60 44;
+    --primary: 74 81 58;
+    --primary-foreground: 254 252 247;
+    --secondary: 108 116 80;
+    --secondary-foreground: 254 252 247;
+    --muted: 198 199 162;
+    --muted-foreground: 74 81 58;
+    --accent: 163 126 76;
+    --accent-foreground: 51 60 44;
+    --destructive: 178 34 34;
+    --destructive-foreground: 255 255 255;
+    --border: 180 165 129;
+    --input: 180 165 129;
+    --ring: 74 81 58;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[var(--sandstone-beige)] text-[var(--deep-army-green)] min-h-screen;
+  }
+  
+  /* Original gradients for preserved sections */
+  .gradient-olive {
+    background: linear-gradient(135deg, var(--olive-green) 0%, #8a8960 100%);
+  }
+  
+  .gradient-navy {
+    background: linear-gradient(135deg, var(--navy) 0%, #2d3748 100%);
+  }
+  
+  /* New military gradients */
+  .gradient-military {
+    background: linear-gradient(135deg, var(--military-green) 0%, var(--olive-drab) 100%);
+  }
+  
+  .gradient-brown {
+    background: linear-gradient(135deg, var(--dark-brown) 0%, var(--medium-brown) 100%);
+  }
+  
+  .gradient-tan {
+    background: linear-gradient(135deg, var(--coyote-tan) 0%, var(--desert-khaki) 100%);
+  }
+  
+  .gradient-sage {
+    background: linear-gradient(135deg, var(--sage-green) 0%, var(--pale-olive) 100%);
+  }
+  
+  .gradient-charcoal {
+    background: linear-gradient(135deg, var(--charcoal) 0%, var(--deep-army-green) 100%);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, var(--dark-brown) 0%, var(--coyote-tan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .military-texture {
+    background-image: 
+      linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.02) 25%, rgba(255,255,255,0.02) 50%, transparent 50%, transparent 75%, rgba(255,255,255,0.02) 75%),
+      linear-gradient(-45deg, transparent 25%, rgba(255,255,255,0.02) 25%, rgba(255,255,255,0.02) 50%, transparent 50%, transparent 75%, rgba(255,255,255,0.02) 75%);
+    background-size: 20px 20px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[var(--military-green)] hover:bg-[var(--olive-drab)] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-[var(--dark-brown)] hover:bg-[var(--medium-brown)] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-accent {
+    @apply bg-[var(--coyote-tan)] hover:bg-[var(--warm-brown)] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .military-border {
+    border-left: 4px solid var(--military-green);
+  }
+  
+  .section-divider {
+    border-color: var(--charcoal);
+  }
+
+  /* ElevenLabs widget styling */
+  .elevenlabs-widget-container {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  /* Custom styling for the ElevenLabs widget */
+  elevenlabs-convai {
+    --widget-primary-color: var(--military-green);
+    --widget-secondary-color: var(--olive-drab);
+    --widget-background-color: white;
+    --widget-text-color: var(--deep-army-green);
+    --widget-border-radius: 12px;
+    --widget-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Responsive adjustments for the widget */
+  @media (max-width: 768px) {
+    .elevenlabs-widget-container {
+      bottom: 80px;
+      right: 15px;
+    }
+  }
+}
