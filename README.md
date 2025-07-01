@@ -85,7 +85,7 @@ const plan = await generateActionPlan("I want to transition into tech", {
 ```
 ## 🚀 Try It Out
 
-🔗 [Live App](https://nextmission-navigator.netlify.app)  
+🔗 [Live App](https://vetnavi.ai/)  
 💻 [GitHub Repo](https://github.com/MsMetamorphosis/NextMission_Navigator)  
 
 ---
